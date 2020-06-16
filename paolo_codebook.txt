@@ -1,0 +1,41 @@
+The Codebook describes the variables and labels
+
+##1) Merges the training and the test sets to create one data set
+
+file:	 UCI HAR Dataset
+
+training set:	xtrain :7352 rows, 561 columns
+training labels	ytrain :7352 rows, 1 column
+training set:	subjecttrain :7352 rows, 1 column
+
+test set:	xtest :2947 rows, 561 columns
+test labels: 	ytest :2947 rows, 1 column
+test set:	subjecttest :2947 rows, 1 column
+
+Merge set:	rawdata :10299 rows, 563 columns
+
+
+##2) Extracts only the measurements on the mean and standard deviation for each measurement
+measures:	features :1 row, 561 columns
+measure names:	featureIndex :1 row, 66 columns
+
+data :10299 rows, 68 columns
+
+##3) Uses descriptive activity names to name the activities in the data set
+
+data$activity <- factor()
+obs: change the numbers in activity column into the name of activities
+
+##4) Appropriately labels the data set with descriptive variable names
+
+a) All start with t replaced by Time
+b) All start with f replaced by Frequency
+c) All Acc replaced by Accelerometer
+d) All Gyro replaced by Gyroscope
+e) All Mag replaced by Magnitude
+f) All brackets removed
+
+##5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+
+tidydata : 	180 rows, 68 columns
+output file:	paolo_meandata.txt
